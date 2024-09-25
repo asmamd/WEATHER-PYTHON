@@ -1,0 +1,10 @@
+Git Bash
+
+Upload your whole folder from your computer to your GitHub account.
+
+1 sign in your GitHub account then press new button and create your repository matching with your file name and hit the create button.
+2 it will show you a few commands select and copy like that command "git remote add origin https://github.com/asmamd/WEATHER-PYTHON.git".
+3 go to your folder and right click and select git bash here.
+4 write command in git bash " git init"
+5 then " git status" command where you can see folder is ready to commit.
+6 

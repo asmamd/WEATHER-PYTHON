@@ -1,0 +1,71 @@
+<Doctype! HTML>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <style>
+            body {
+                background-color: white;
+            }
+
+            table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+            padding: 20px;
+            margin: auto;
+            
+            }
+
+            td, th {
+            border: 1px solid #b2babb;
+            text-align: center;
+            padding: 8px;
+            }
+
+            tr:nth-child(even) {
+            background-color: #dddddd;
+            }
+
+            #weather {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            h1 {
+                text-align: center;
+                color: #b54c1d;
+                padding: 20px;
+                font-size:40px;
+            }
+            th {
+                color:blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Weather Forecast for {{ data['city']['name'] }}</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temperature (°C)</th>
+                <th>Weather</th>
+                <th>Icon</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data['list'] %}
+            <tr>
+                <td>{{ item['dt_txt'] }}</td>
+                <td>{{ item['main']['temp'] }}</td>
+                <td>{{ item['weather'][0]['description'] }}</td>
+                <td>
+                    <img src="http://openweathermap.org/img/wn/{{ item['weather'][0]['icon'] }}@2x.png" alt="Weather Icon">
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </body>
+</html>
